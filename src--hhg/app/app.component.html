@@ -1,0 +1,33 @@
+<div class="application">
+ <app-nav>loading..</app-nav>
+  <div class="container">
+    <div class="app-min-height">
+       <router-outlet></router-outlet>
+       <div class="col-m-12" style="padding: 2em 0;">
+          <div class="card" style="width: 18rem;">
+              <div class="card-header bg-warning">
+                  Contacts list
+              </div>
+              <div class="card-body">
+                  <div *ngIf="contacts; else nodata">
+                      content here ...
+                      <div *ngFor="let person of contacts ; let i = index" >
+                        {{i+1}}
+                          {{person}}
+                      </div>
+                  </div>
+                  
+                  
+                  <ng-template #nodata>No content here...</ng-template>
+              </div>
+            </div>
+    </div>
+    </div>
+  </div>
+
+   
+  <app-footer>loading--</app-footer>
+</div>
+
+
+

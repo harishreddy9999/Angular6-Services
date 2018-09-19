@@ -1,0 +1,38 @@
+<div class="container mt-4">
+    <h4 class="bg-success p-2">View customers list  <span class="badge badge-danger">Get service</span></h4>
+    <table class="table table-bordered table-sm"> 
+        <tr>
+            <th>Customer name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Total Remarks</th>
+            <!-- <th>Remarks</th> -->
+            <th>Address</th>
+            <th>Assigndate</th>
+            <th>Actions1</th>
+            <th>Actions2</th>
+        </tr>
+        
+        <tr *ngFor="let customer of customers">
+          <td>{{customer._id}}{{customer.name}}</td>
+          <td>{{customer.mobile}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.remarks.length}}</td>
+           <!-- <td>
+            <tr *ngFor="let p of customer.remarks"> 
+              <td *ngIf = "customer.remarks.length  == 0"> No Remarks found </td> 
+              <td *ngIf = "customer.remarks.length !=  0" style="border: none;">{{p.itemdesc}},{{p.remark}}</td>
+            </tr>
+          </td> -->
+          <td>{{customer.address}}</td>
+          <td>{{customer.assigndate}}</td>
+          <td><button (click) = "customerDelete(customer._id)">Delete</button></td>
+          <td><button (click) = "onSelect(customer)">Edit</button></td>
+           <!-- <td><a (click)= "customerEdit()" ><i class="fas fa-pencil-alt text-info"></i></a><a (click)= "customerDelete(customer_id)"><i class="fas fa-trash-alt text-danger pl-3"></i></a></td> -->
+        </tr>
+        
+      </table>
+    
+</div>
+
+   
